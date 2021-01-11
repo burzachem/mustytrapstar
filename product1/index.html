@@ -43,21 +43,44 @@
 
 		</div>
 
-		<div class="colors">
-			<div class="color selected" style="background-color: #222" title="Black"></div>
-			<div class="color" style="background-color: #FFF" title="White"></div>
-			<div class="color" style="background-color: #00F" title="Dark Blue"></div>
-			<div class="color" style="background-color: #08F" title="Light Blue"></div>
-		</div>
 
-		<div class="addToCart">
-			<div class="qntySection">
-				<span class="btn" data-type="remove">-</span>
-				<span id="qnty">1</span>
-				<span class="btn" data-type="add">+</span>
-			</div>
-			<a href="#">Add To Cart</a>
-		</div>
+	   
+         <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ab3R-BPrHb_yK4BExaOiv0urHulyMFAeEXSx5eeHS0826-NvPDPTNtl0fAhBTnHXRvD0ioSsRIRCSjUq&currency=MXN"></script>
+         
+         
+         
+         
+         
+         
+         
+         <div id="checkout" class="checkout"> </div>
+   
+         
+
+        
+    <script>paypal.Buttons({
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '500.00'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+
+
+        }).render('#checkout');</script>
 
 
 	</div>
