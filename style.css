@@ -11,11 +11,17 @@ body {
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-   grid-template-rows:  1fr 1fr 1fr;
+   grid-template-rows:  1fr 1fr 1fr 1fr;
   grid-template-areas:
     "main main main main"
     "content1 content2 content3 content4"
-    "content5 content6 content7 content8";
+    "content5 content6 content7 content8"
+    "content11 content12 content13 content14"
+  
+      
+      
+      ;
+    
   grid-gap: 0.2rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -92,6 +98,63 @@ main {
 }
 
 
+#content9 {
+  background: #73ffba;
+  grid-area: content9;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+#content11 {
+  background: #6fffd2;
+  grid-area: content11;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content12 {
+  background: #64ffda;
+  grid-area: content12;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content13 {
+  background: #73ffba;
+  grid-area: content13;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+#content14 {
+  background: #6fffd2;
+  grid-area: content14;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content15 {
+  background: #64ffda;
+  grid-area: content15;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+#content17 {
+  background: #64ffda;
+  grid-area: content17;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+
+
+
+
 a {
   text-align: center;
   display: block;
@@ -104,7 +167,7 @@ a {
 @media only screen and (max-width: 550px) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr 1.2fr 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr 1.2fr 1fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr 1.2fr 1fr ;
     grid-template-areas:
      
       "main"
@@ -116,6 +179,14 @@ a {
       "content6"
       "content7"
       "content8"
+      "content9"
+      "content11"
+      "content12"
+      "content13"
+      "content14"
+      "content15"
+      "content17"
+ 
    ;
   }
 }
