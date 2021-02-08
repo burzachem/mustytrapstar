@@ -22,17 +22,6 @@
         
 	<div class="column column2">
 	
-		<div class="step" id="step4">
-			<div class="number">
-				<span>4</span>
-			</div>
-			<div class="title">
-				<h1>Payment Information</h1>
-			</div>
-			<div class="modify">
-				<i class="fa fa-plus-circle"></i>
-			</div>
-		</div>
 		<div class="content" id="payment">
 			<div class="left">
 			<form class="go-right">
@@ -84,37 +73,79 @@
 			      </form>
 			</div>
 			<div class="right">
-				<div class="accepted">
-					<span><img src="https://i.imgur.com/Z5HVIOt.png"></span>
-					<span><img src="https://i.imgur.com/Le0Vvgx.png"></span>
-					<span><img src="https://i.imgur.com/D2eQTim.png"></span>
-					<span><img src="https://i.imgur.com/Pu4e7AT.png"></span>
-					<span><img src="https://i.imgur.com/ewMjaHv.png"></span>
-					<span><img src="https://i.imgur.com/3LmmFFV.png"></span>
-				</div>
+			
 				<div class="secured">
-					<img class="lock" src="https://i.imgur.com/hHuibOR.png">
-					<p class="security info">What, well you mean like a date? Doc? Am I to understand you're still hanging around with Doctor Emmett Brown, McFly? Tardy slip for you, Miss Parker. And one for you McFly I believe that makes four in a row.</p>
+				
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 				</div>
 			</div>
 			<a class="continue" href="../thankyou/index.html">Complete Order</a>
             
            
 				<span class="sub">By selecting this button you agree to the purchase and subsequent payment for this order.</span> 
+            
+            
+            
+            
+                             <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Ab3R-BPrHb_yK4BExaOiv0urHulyMFAeEXSx5eeHS0826-NvPDPTNtl0fAhBTnHXRvD0ioSsRIRCSjUq&currency=MXN"></script>
+         
+         
+      
+         
+         <div id="checkout" class="checkout"> </div>
+   
+         
+
+        
+    <script>paypal.Buttons({
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '500.00'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+
+
+        }).render('#checkout');</script>
  		</div>
  	</div>
  	<div class="column column3">
- 		<div class="step" id="step5">
-			<div class="number">
-				<span>5</span>
-			</div>
-			<div class="title">
-				<h1>Finalize Order</h1>
-			</div>
-			<div class="modify">
-				<i class="fa fa-plus-circle"></i>
-			</div>
-		</div>
+ 		
 		<div class="content" id="final_products">
 			<div class="left" id="ordered">
 				<div class="products">
@@ -141,9 +172,8 @@
 					<span class="title">Billing:</span>
 					<div class="address_reviewed">
 						<span class="name">John Smith</span>
-						<span class="address">123 Main Street</span>
-						<span class="location">Everytown, USA, 12345</span>
-						<span class="phone">(123)867-5309</span>
+						<span class="address">123test@gmail.com</span>
+			
 					</div>
 				</div>
 				<div class="shipping">
@@ -155,13 +185,7 @@
 						<span class="phone">(123)867-5309</span>
 					</div>
 				</div>
-				<div class="payment">
-					<span class="title">Payment:</span>
-					<div class="payment_reviewed">
-						<span class="method">Visa</span>
-						<span class="number_hidden">xxxx-xxxx-xxxx-1111</span>
-					</div>
-				</div>
+			
 				<div id="complete">
 				
 			</div>

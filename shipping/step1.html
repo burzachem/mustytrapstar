@@ -97,13 +97,13 @@
 					<input type="radio" id="shipping_3" value="3"/><label for="shipping_3"> Overnight Shipping <span class="price">$12.00</span></label>
 				</p>
 			</form>
-			<a class="continue" href="../shipping/step2.html">Continue</a>
+			
+        
 		</div>
 	</div>
         
         
-        
-        
+
         
     
         
@@ -134,70 +134,13 @@
 				</div>
 			</div>	
 			<div class="right" id="reviewed">
-				<div class="billing">
-					<span class="title">Billing:</span>
-					<div class="address_reviewed">
-						<span class="name">John Smith</span>
-						<span class="address">123 Main Street</span>
-						<span class="location">Everytown, USA, 12345</span>
-						<span class="phone">(123)867-5309</span>
-					</div>
-				</div>
-				<div class="shipping">
-					<span class="title">Shipping:</span>
-					<div class="address_reviewed">
-						<span class="name">John Smith</span>
-						<span class="address">123 Main Street</span>
-						<span class="location">Everytown, USA, 12345</span>
-						<span class="phone">(123)867-5309</span>
-					</div>
-				</div>
-				<div class="payment">
-					<span class="title">Payment:</span>
-					<div class="payment_reviewed">
-						<span class="method">Visa</span>
-						<span class="number_hidden">xxxx-xxxx-xxxx-1111</span>
-					</div>
-				</div>
+			
 				<div id="complete">
 			
-                        <!-- Include the PayPal JavaScript SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=Ab3R-BPrHb_yK4BExaOiv0urHulyMFAeEXSx5eeHS0826-NvPDPTNtl0fAhBTnHXRvD0ioSsRIRCSjUq&currency=MXN"></script>
-         
-         
-         
-        <a href="../cart/index.html"><button  >cart</button></a>
-         
-         
-         <div id="checkout" class="checkout"> </div>
-   
-         
-
-        
-    <script>paypal.Buttons({
-            // Set up the transaction
-            createOrder: function(data, actions) {
-                return actions.order.create({
-                    purchase_units: [{
-                        amount: {
-                            value: '500.00'
-                        }
-                    }]
-                });
-            },
-
-            // Finalize the transaction
-            onApprove: function(data, actions) {
-                return actions.order.capture().then(function(details) {
-                    // Show a success message to the buyer
-                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                });
-            }
-
-
-        }).render('#checkout');</script>
-
-				<span class="sub">By selecting this button you agree to the purchase and subsequent payment for this order.</span> 
+ <a class="continue" href="../shipping/step2.html">pay now</a>
+                                                
+<a href="../cart/index.html"><button  >back to cart</button></a>
+				<span class="sub">By selecting this button you agree to the purchase and subsequent payment for this order.</span>
 			</div>
 		</div>
 	</div>
